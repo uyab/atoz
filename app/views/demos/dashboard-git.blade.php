@@ -1,6 +1,7 @@
 {{HTML::style('assets/plugins/bootstrap.datepicker/css/datepicker.css')}}
 {{HTML::script('assets/plugins/bootstrap.datepicker/js/bootstrap-datepicker.js')}}
 {{HTML::script('assets/plugins/jquery.flot/jquery.flot.js')}}
+{{HTML::script('assets/plugins/jquery.flot/curvedLines.js')}}
 
 <div class="page box">
     <div class="container">
@@ -122,19 +123,13 @@
         };
 
         var data = generateRandomData(1, 10000, 31);
-        $.plot($("#chart"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, points:{show:true}, curvedLines: {apply:false}}], options);
+        $.plot($("#chart"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, points:{show:false}, curvedLines: {apply:true}}], options);
 
         options.colors = ['#2980B9'];
         options.grid.show = false;
-        $.plot($("#chart1"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, curvedLines: {apply:false}}], options);
-
-        // options.colors = ['#d94096'];
-        $.plot($("#chart2"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, curvedLines: {apply:false}}], options);
-
-        // options.colors = ['#d94096'];
-        $.plot($("#chart3"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, curvedLines: {apply:false}}], options);
-
-        // options.colors = ['#d94096'];
-        $.plot($("#chart4"), [{data: data, lines: { show: true, lineWidth: 2, fill:true}, curvedLines: {apply:false}}], options);
+        $.plot($("#chart1"), [{data: data, bars: { show: true, lineWidth: 0, fill:true, barWidth:.9}, curvedLines: {apply:false}}], options);
+        $.plot($("#chart2"), [{data: data, bars: { show: true, lineWidth: 0, fill:true, barWidth:.9}, curvedLines: {apply:false}}], options);
+        $.plot($("#chart3"), [{data: data, bars: { show: true, lineWidth: 0, fill:true, barWidth:.9}, curvedLines: {apply:false}}], options);
+        $.plot($("#chart4"), [{data: data, bars: { show: true, lineWidth: 0, fill:true, barWidth:.9}, curvedLines: {apply:false}}], options);
 });
 </script>
