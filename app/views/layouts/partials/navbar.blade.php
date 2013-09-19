@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav navbar-right nav-indicators">
 				<li class="dropdown nav-notifications">
 					<a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
-						<span class="label label-danger">9</span><i class="icon-warning-sign"></i>
+						<span class="label theme brand-4 brand-inverse">9</span><i class="icon-warning-sign"></i>
 					</a>
 					<ul class="dropdown-menu reveal">
 						<li class="nav-notifications-header">
@@ -54,7 +54,7 @@
 
 				<li class="dropdown nav-notifications">
 				 	<a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
-						<span class="label label-info">8</span>
+						<span class="label  theme brand-3 brand-inverse">8</span>
 						<i class="icon-envelope"></i>
 					</a>
 					<ul class="dropdown-menu reveal">
@@ -99,7 +99,7 @@
 						Bayu Hendra Winata
 						<i class="icon-caret-down"></i>
 					</a>
-					<ul class="dropdown-menu reveal" style="width:189px">
+					<ul class="dropdown-menu reveal" style="width:200px">
 						<li><a href="pages/basic-user-profile.html"><i class="icon-user"></i> Edit Profile</a></li>
 						<li><a href="dashboard.html#"><i class="icon-cogs"></i> Settings</a></li>
 						<li><a href="pages/faq.html"><i class="icon-info-sign"></i> Help</a></li>
