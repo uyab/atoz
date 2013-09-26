@@ -12,8 +12,12 @@
 */
 
 Route::get('/', 'SiteController@showLogin');
+Route::get('/login', 'SiteController@showLogin');
+Route::post('/login', array('as' => 'login', 'uses' => 'SiteController@actionLogin'));
+Route::get('/logout', array('as' => 'logout', 'uses' => 'SiteController@actionLogout'));
+
+Route::get('/demo/dashboard', array('as' => 'home', 'uses' => 'DemoController@showPage'));
 
 Route::get('/demo/{page}', 'DemoController@showPage');
 Route::post('/form/addUser', 'FormController@addUser');
 
-Route::get('/login', array('as' => 'login', 'uses' => 'LoginController@showIndex'));

@@ -10,40 +10,68 @@
             <div class="pad-wide"></div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <form role="form"  class="form">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Hi, Bro</h3>
-                        </div>
-                        <div class="panel-body">
+                    {{ Form::open([
+                        "url"           => "login",
+                        "method"        => "post",
+                        "autocomplete"  => "off",
+                        "role"          => "form",
+                        "class"         => "form",
 
-                            <div class="alert alert-danger alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <strong>Ooops!</strong> Login failed.
+                    ]) }}
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Hi, Lara Bro</h3>
                             </div>
+                            <div class="panel-body">
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
-                                </div>
+                                @if(Session::has('flash_error'))
+                                    <div class="alert alert-danger alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{ Session::get('flash_error') }}
+                                    </div>
+                                @endif
+                                @if(Session::has('flash_notice'))
+                                    <div class="alert alert-success alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{ Session::get('flash_notice') }}
+                                    </div>
+                                @endif
 
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
+                                    <div class="form-group">
+                                        {{ Form::text(
+                                            "username",
+                                            Input::old("username"),
+                                            [
+                                                "placeholder" => "Username",
+                                                "class" => "form-control"
+                                            ])
+                                        }}
+                                    </div>
 
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Remember Me
-                                    </label>
-                                </div>
+                                    <div class="form-group">
+                                        {{ Form::password(
+                                            "password",
+                                            [
+                                                "placeholder" => "Password",
+                                                "class" => "form-control"
+                                            ])
+                                        }}
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember Me
+                                        </label>
+                                    </div>
+                            </div>
+                            <div class="panel-footer">
+                                {{ Form::submit("Login", ["class" => 'btn btn-primary']) }}
+                                <a href="#" class="btn btn-link">Forgot Password</a>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            <input type="submit" class="btn btn-primary" value="Login">
-                            <a href="#" class="btn btn-link">Forgot Password</a>
-                        </div>
-                    </div>
-                    </form>
-
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

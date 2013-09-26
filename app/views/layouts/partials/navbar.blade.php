@@ -5,7 +5,7 @@
 	  <div class="navbar-header">
 	    <a class="navbar-brand" href="#">
 	    	<img src="{{asset('assets/img/sample/logo-app.jpg')}}" alt="">
-	    	<span>App.name</span>
+	    	<span>Atoz</span>
 	    </a>
 	  </div>
 
@@ -97,7 +97,7 @@
 				<li class="dropdown">
 					<a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="{{asset('assets/img/sample/avatar.png')}}" width="30px" alt="" class="avatar img-circle">
-						Bayu Hendra Winata
+						{{ Auth::user()->username }}
 						<i class="icon-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu reveal" style="width:200px">
@@ -105,7 +105,7 @@
 						<li><a href="dashboard.html#"><i class="icon-cogs"></i> Settings</a></li>
 						<li><a href="pages/faq.html"><i class="icon-info-sign"></i> Help</a></li>
 						<li class="divider"></li>
-						<li><a href="login.html"><i class="icon-off"></i> Log Out</a></li>
+						<li><a href="{{ route('logout') }}"><i class="icon-off"></i> Log Out</a></li>
 					</ul>
 				</li>
 

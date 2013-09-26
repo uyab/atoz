@@ -987,9 +987,6 @@ dl dd {
 .social-navbar .navbar-nav > li > a {
   color: #333;
 }
-.social-navbar .navbar-nav > li > a .icon {
-  font-size: 16px;
-}
 .social-navbar .navbar-nav > li > a .label {
   border-radius: 100px;
   position: absolute;
