@@ -1351,10 +1351,10 @@ input[type="file"].form-control {
   text-align: center;
 }
 #empty {
-  background-color: #f6f6f6;
+  background-color: #fff;
 }
 .page-login {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .page-login .social-box .body {
   margin-top: 20px;
@@ -1362,7 +1362,9 @@ input[type="file"].form-control {
 .page-login .logo {
   vertical-align: middle;
   text-align: center;
-  margin-bottom: 20px;
+}
+.page-login h1 {
+  font-size: 22px;
 }
 .page h2.page-title {
   margin-bottom: 40px;
