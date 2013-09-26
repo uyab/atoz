@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'LoginController@showIndex');
+Route::get('/', 'SiteController@showLogin');
 
 Route::get('/demo/{page}', 'DemoController@showPage');
 Route::post('/form/addUser', 'FormController@addUser');

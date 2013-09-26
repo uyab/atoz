@@ -40,7 +40,7 @@
 		<div class="wraper">
 
 			<div id="main">
-		 		<div id="content">{{$content}}</div>
+		 		<div id="content">@yield('content')</div>
 			</div>
 
 		</div>
