@@ -13,7 +13,8 @@
 			<ul class="nav navbar-nav navbar-right nav-indicators">
 				<li class="dropdown nav-notifications">
 					<a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
-						<span class="label theme brand-4 brand-inverse">9</span><i class="icon-warning-sign"></i>
+						<i class="icon-warning-sign icon"></i>
+						<span class="label theme brand-4 brand-inverse">9</span>
 					</a>
 					<ul class="dropdown-menu reveal">
 						<li class="nav-notifications-header">
@@ -54,8 +55,8 @@
 
 				<li class="dropdown nav-notifications">
 				 	<a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-envelope icon"></i>
 						<span class="label  theme brand-3 brand-inverse">8</span>
-						<i class="icon-envelope"></i>
 					</a>
 					<ul class="dropdown-menu reveal">
 						<li class="nav-notifications-header">

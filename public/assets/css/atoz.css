@@ -987,10 +987,15 @@ dl dd {
 .social-navbar .navbar-nav > li > a {
   color: #333;
 }
+.social-navbar .navbar-nav > li > a .icon {
+  font-size: 16px;
+}
 .social-navbar .navbar-nav > li > a .label {
+  border-radius: 100px;
   position: absolute;
-  margin-top: -10px;
-  margin-left: 8px;
+  margin-top: -25px;
+  margin-left: 10px;
+  font-weight: normal;
 }
 .social-navbar .navbar-nav > li > a .caret {
   border-top-color: #333;
