@@ -14,8 +14,12 @@
 Route::group(array('before' => 'guest'), function()
 {
     Route::get('/', array('as' => 'login', 'uses' => 'SiteController@getLogin'));
-
     Route::post('/login', 'SiteController@postLogin');
+
+    Route::get("/forgot-password", [ "as" => "getPasswordReminder", "uses" => "SiteController@getPasswordReminder"]);
+    Route::post("/forgot-password", [ "as" => "postPasswordReminder", "uses" => "SiteController@postPasswordReminder"]);
+    Route::get("/reset-password/{token}", [ "as" => "getPasswordReset", "uses" => "SiteController@getPasswordReset"]);
+    Route::post("/reset-password", [ "as" => "postPasswordReset", "uses" => "SiteController@postPasswordReset"]);
 });
 
 Route::group(array('before' => 'auth'), function()
@@ -29,4 +33,3 @@ Route::group(array('before' => 'auth'), function()
     Route::post('/form/addUser', 'FormController@addUser');
 
 });
-

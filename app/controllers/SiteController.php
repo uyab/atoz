@@ -5,7 +5,7 @@ class SiteController extends BaseController {
 	public function getLogin()
 	{
         $this->layout = View::make("site.login");
-        $this->layout->extend = 'layouts.empty';
+        $this->layout->extend = 'layouts.front';
 	}
 
     public function postLogin()
@@ -14,7 +14,7 @@ class SiteController extends BaseController {
             'username' => Input::get('username'),
             'password' => Input::get('password')
         );
-        if (Auth::attempt($user)) {
+        if (Auth::attempt($user, Input::get('remember'))) {
             return Redirect::route('home')
                 ->with('flash_notice', 'You are successfully logged in.');
         }
@@ -32,4 +32,80 @@ class SiteController extends BaseController {
             ->with('flash_notice', 'You are successfully logged out.');
     }
 
+    public function getPasswordReminder()
+    {
+        $this->layout = View::make("site.reminder");
+        $this->layout->extend = 'layouts.front';
+    }
+
+    public function postPasswordReminder()
+    {
+        $validator = Validator::make(Input::all(), [
+            "email" => "required|email|exists:users,email"
+        ]);
+
+        if ($validator->passes())
+        {
+            $credentials = [
+                "email" => Input::get("email")
+            ];
+
+            Password::remind($credentials,
+                function($message, $user)
+                {
+                    $message->from("uyab.exe@gmail.com");
+                }
+            );
+
+            return Redirect::route("getPasswordReminder");
+        }
+        else
+        {
+            return Redirect::route("getPasswordReminder")->withErrors($validator);
+        }
+    }
+
+    public function getPasswordReset($token)
+    {
+        $this->layout = View::make("site.password.reset")->with(compact('token'));
+        $this->layout->extend = 'layouts.front';
+    }
+
+    public function postPasswordReset()
+    {
+        $token = Input::get('token');
+
+        $validator = Validator::make(Input::all(), [
+            "email"                 => "required|email|exists:password_reminders,email",
+            "password"              => "required|min:6",
+            "password_confirmation" => "same:password",
+            "token"                 => "exists:password_reminders,token"
+        ]);
+
+        if ($validator->passes())
+        {
+            $credentials = [
+                "email" => Input::get("email")
+            ];
+
+            return Password::reset($credentials,
+                function($user, $password)
+                {
+                    $user->password = Hash::make($password);
+                    $user->save();
+                    Auth::login($user);
+
+                    return Redirect::route("home");
+
+                }
+
+            );
+        }
+        else
+        {
+            return Redirect::route('getPasswordReset', array($token))
+            ->withInput()
+            ->withErrors($validator);
+        }
+    }
 }

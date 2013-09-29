@@ -748,6 +748,9 @@ dl dd {
 .ar {
   text-align: right;
 }
+.err {
+  color: #cc0000;
+}
 /*! ============================================================
  * Social Sidebar
  * ============================================================ */
@@ -1350,17 +1353,14 @@ input[type="file"].form-control {
 #empty {
   background-color: #fff;
 }
-.page-login {
+.page-front {
   margin-top: 40px;
 }
-.page-login .social-box .body {
-  margin-top: 20px;
-}
-.page-login .logo {
+.page-front .logo {
   vertical-align: middle;
   text-align: center;
 }
-.page-login h1 {
+.page-front h1 {
   font-size: 22px;
 }
 .page h2.page-title {
@@ -1489,7 +1489,7 @@ input[type="file"].form-control {
 .sidebar-mini .sidebar .menu .nav-list a.active:after,
 .sidebar-mini .sidebar .menu .nav-list a:hover:after,
 .sidebar-mini .sidebar .menu .nav-list a:focus:after {
-  top: 7px;
+  top: 9px;
 }
 .sidebar-mini #main {
   margin-left: 50px;
