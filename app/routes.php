@@ -16,6 +16,8 @@ Route::group(array('before' => 'guest'), function()
     Route::get('/', array('as' => 'login', 'uses' => 'SiteController@getLogin'));
     Route::post('/login', 'SiteController@postLogin');
 
+    Route::post('/register', array('as' => 'register', 'uses' => 'SiteController@postRegister'));
+
     Route::get("/forgot-password", [ "as" => "getPasswordReminder", "uses" => "SiteController@getPasswordReminder"]);
     Route::post("/forgot-password", [ "as" => "postPasswordReminder", "uses" => "SiteController@postPasswordReminder"]);
     Route::get("/reset-password/{token}", [ "as" => "getPasswordReset", "uses" => "SiteController@getPasswordReset"]);

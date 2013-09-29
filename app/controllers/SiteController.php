@@ -25,6 +25,36 @@ class SiteController extends BaseController {
             ->withInput();
     }
 
+    public function postRegister()
+    {
+
+        $validator = Validator::make(Input::all(), [
+            "username"              => "required|unique:users,username",
+            "email"                 => "required|email|unique:users,email",
+            "password"              => "required|min:6",
+            "password_confirmation" => "same:password",
+        ]);
+
+        if($validator->passes())
+        {
+            $user = new User;
+            $user->username = Input::get('username');
+            $user->email    = Input::get('email');
+            $user->password = Hash::make(Input::get('password'));
+            $user->save();
+
+            Auth::login($user);
+            return Redirect::route("home");
+        }
+        else
+        {
+            return Redirect::route('login')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+    }
+
     public function getLogout()
     {
         Auth::logout();
@@ -93,8 +123,8 @@ class SiteController extends BaseController {
                 {
                     $user->password = Hash::make($password);
                     $user->save();
-                    Auth::login($user);
 
+                    Auth::login($user);
                     return Redirect::route("home");
 
                 }
