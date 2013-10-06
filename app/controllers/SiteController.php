@@ -28,12 +28,12 @@ class SiteController extends BaseController {
     public function postRegister()
     {
 
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make(Input::all(), array(
             "username"              => "required|unique:users,username",
             "email"                 => "required|email|unique:users,email",
             "password"              => "required|min:6",
             "password_confirmation" => "same:password",
-        ]);
+        ));
 
         if($validator->passes())
         {
@@ -70,15 +70,15 @@ class SiteController extends BaseController {
 
     public function postPasswordReminder()
     {
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make(Input::all(), array(
             "email" => "required|email|exists:users,email"
-        ]);
+        ));
 
         if ($validator->passes())
         {
-            $credentials = [
+            $credentials = array(
                 "email" => Input::get("email")
-            ];
+            );
 
             Password::remind($credentials,
                 function($message, $user)
@@ -105,18 +105,18 @@ class SiteController extends BaseController {
     {
         $token = Input::get('token');
 
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make(Input::all(), array(
             "email"                 => "required|email|exists:password_reminders,email",
             "password"              => "required|min:6",
             "password_confirmation" => "same:password",
             "token"                 => "exists:password_reminders,token"
-        ]);
+        ));
 
         if ($validator->passes())
         {
-            $credentials = [
+            $credentials = array(
                 "email" => Input::get("email")
-            ];
+            );
 
             return Password::reset($credentials,
                 function($user, $password)
