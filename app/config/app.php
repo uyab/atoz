@@ -115,8 +115,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		// additional path goes here
-		// 'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	),
 
 	/*
