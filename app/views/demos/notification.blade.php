@@ -1,3 +1,7 @@
+@extends('layouts.backend')
+
+@section('content')
+
 <div class="page box">
     <div class="container">
         <div class="row">
@@ -10,36 +14,39 @@
         </div>
     </div>
 </div>
+@stop
 
-
-<script type="text/javascript">
-    $(function(){
-        $('#notifyDefault').on('click', function(){
-            $.ambiance({
-                message: "Default notification.",
-                title: false,
+@section('script-end')
+    @parent
+    <script type="text/javascript">
+        $(function(){
+            $('#notifyDefault').on('click', function(){
+                $.ambiance({
+                    message: "Default notification.",
+                    title: false,
+                });
+            });
+            $('#notifySuccess').on('click', function(){
+                $.ambiance({
+                    message: "Success notification.",
+                    title: false,
+                    type: 'success'
+                });
+            });
+            $('#notifyDanger').on('click', function(){
+                $.ambiance({
+                    message: "Danger notification.",
+                    title: false,
+                    type: 'error'
+                });
+            });
+            $('#notifySticky').on('click', function(){
+                $.ambiance({
+                    message: "You need to close this manually.",
+                    title: false,
+                    timeout: 0
+                });
             });
         });
-        $('#notifySuccess').on('click', function(){
-            $.ambiance({
-                message: "Success notification.",
-                title: false,
-                type: 'success'
-            });
-        });
-        $('#notifyDanger').on('click', function(){
-            $.ambiance({
-                message: "Danger notification.",
-                title: false,
-                type: 'error'
-            });
-        });
-        $('#notifySticky').on('click', function(){
-            $.ambiance({
-                message: "You need to close this manually.",
-                title: false,
-                timeout: 0
-            });
-        });
-    });
-</script>
+    </script>
+@stop

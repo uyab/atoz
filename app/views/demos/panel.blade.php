@@ -1,3 +1,6 @@
+@extends('layouts.backend')
+
+@section('content')
 <div class="box">
     <div class="container">
 
@@ -188,13 +191,16 @@
                 </div>
             </div>
         </div>
-
-
-        <script type="text/javascript">
-        $(function(){
-            $('#panelScroll').slimscroll();
-        });
-        </script>
-
     </div>
 </div>
+@stop
+
+@section('script-end')
+    @parent
+    <script type="text/javascript">
+    $(function(){
+        $('#panelScroll').slimscroll();
+    });
+    </script>
+
+@stop

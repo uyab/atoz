@@ -1,3 +1,7 @@
+@extends('layouts.backend')
+
+@section('content')
+
 <div class="page box">
     <div class="container">
         <h3>Default Summary</h3>
@@ -149,3 +153,5 @@
         </div>
     </div>
 </div>
+
+@stop

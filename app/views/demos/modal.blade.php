@@ -1,3 +1,7 @@
+@extends('layouts.backend')
+
+@section('content')
+
 <div class="page box">
     <div class="container">
         <div class="row">
@@ -79,3 +83,5 @@
         </div>
     </div>
 </aside>
+
+@stop
