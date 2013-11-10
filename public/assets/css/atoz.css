@@ -762,14 +762,16 @@ dl dd {
   top: 0;
   bottom: 0;
   width: 200px;
-  background-color: #2c3e50;
-  -webkit-box-shadow: inset -3px 0 5px -3px #080b0e;
-  box-shadow: inset -3px 0 5px -3px #080b0e;
+  background-color: #e74c3c;
+  -webkit-box-shadow: inset -3px 0 5px -3px #a82315;
+  box-shadow: inset -3px 0 5px -3px #a82315;
+}
+.sidebar a {
+  color: #f5b4ae;
 }
 .sidebar .navigation-sidebar {
   padding: 17px 12px;
   text-align: left;
-  border-bottom: 1px solid #1a242f;
   cursor: pointer;
 }
 .sidebar .sidebar-content {
@@ -803,16 +805,16 @@ dl dd {
 .sidebar .accordion .accordion-heading .accordion-toggle {
   display: block;
   padding: 8px 10px;
-  height: 32px;
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
+  height: 48px;
+  line-height: 30px;
+  font-size: 1.25em;
 }
 .sidebar .accordion .accordion-heading .accordion-toggle i.icon-2 {
-  font-size: 14px;
   width: 22px;
   height: 22px;
-  line-height: 10px;
 }
 .sidebar .accordion .accordion-heading .accordion-toggle span {
   margin-left: 4px;
@@ -822,7 +824,7 @@ dl dd {
 .sidebar .accordion .accordion-heading .accordion-toggle .arrow {
   top: 0;
   float: right;
-  margin-top: 4px!important;
+  margin-top: 8px!important;
   margin-right: 8px!important;
   position: relative;
   font-family: FontAwesome;
@@ -838,7 +840,7 @@ dl dd {
   background-position: 0% 0%;
   background-repeat: repeat;
   margin-top: 0;
-  font-size: .9em;
+  font-size: 1em;
 }
 .sidebar .accordion .accordion-heading .accordion-toggle .arrow:before {
   content: "\f054";
@@ -862,22 +864,19 @@ dl dd {
 .sidebar .accordion .accordion-inner {
   padding: 9px 15px;
 }
-.sidebar .menu .accordion-toggle,
-.sidebar .menu .nav-list a {
-  color: #6e8ba3;
-}
 .sidebar .menu .accordion-group .accordion-heading .accordion-toggle {
-  background-color: #1a242f;
-  -webkit-box-shadow: inset -3px 0 5px -3px #080b0e;
-  box-shadow: inset -3px 0 5px -3px #080b0e;
+  background-color: #d62c1a;
+  -webkit-box-shadow: inset -3px 0 5px -3px #a82315;
+  box-shadow: inset -3px 0 5px -3px #a82315;
 }
 .sidebar .menu .accordion-group .accordion-body a:hover,
 .sidebar .menu .accordion-group .accordion-body a:focus {
-  background-color: #233140;
-  -webkit-box-shadow: inset -3px 0 5px -3px #080b0e;
-  box-shadow: inset -3px 0 5px -3px #080b0e;
+  background-color: #e43725;
+  -webkit-box-shadow: inset -3px 0 5px -3px #a82315;
+  box-shadow: inset -3px 0 5px -3px #a82315;
 }
 .sidebar .menu .nav li a {
+  color: #ffffff;
   padding-right: 10px;
   padding-left: 12px;
   height: 32px;
