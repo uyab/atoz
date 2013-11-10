@@ -892,10 +892,6 @@ dl dd {
 .sidebar .menu .nav .nav .nav li a {
   padding-left: 60px;
 }
-.sidebar .menu .nav-list a.active,
-.sidebar .menu .nav-list a:focus {
-  color: #3498db;
-}
 .sidebar .menu .nav-list a.active:after,
 .sidebar .menu .nav-list a:hover:after,
 .sidebar .menu .nav-list a:focus:after {
@@ -1350,7 +1346,7 @@ input[type="file"].form-control {
 .form .panel-footer {
   text-align: center;
 }
-#empty {
+body.empty {
   background-color: #fff;
 }
 .page-front {
@@ -1618,7 +1614,7 @@ table.table thead .sorting_desc {
 body {
   padding-bottom: 20px;
 }
-body#empty #main {
+body.empty #main {
   margin-top: 0;
 }
 #main {

@@ -1,6 +1,6 @@
 <?php
 
-class DemoController extends BaseController {
+class DemoController extends BackendController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -12,8 +12,7 @@ class DemoController extends BaseController {
 
 	public function showPage($page='index')
 	{
-		$this->layout->currentUrl = Request::url();
-		$this->layout->content = View::make("demos.$page");
+		return View::make("demos.$page");
 	}
 
 }

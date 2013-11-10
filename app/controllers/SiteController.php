@@ -4,8 +4,8 @@ class SiteController extends BaseController {
 
 	public function getLogin()
 	{
-        $this->layout = View::make("site.login");
-        $this->layout->extend = 'layouts.front';
+        // $this->layoutFile = 'layouts.front';
+        return View::make("site.login");
 	}
 
     public function postLogin()
@@ -64,8 +64,7 @@ class SiteController extends BaseController {
 
     public function getPasswordReminder()
     {
-        $this->layout = View::make("site.reminder");
-        $this->layout->extend = 'layouts.front';
+        return View::make("site.reminder");
     }
 
     public function postPasswordReminder()
@@ -97,8 +96,7 @@ class SiteController extends BaseController {
 
     public function getPasswordReset($token)
     {
-        $this->layout = View::make("site.password.reset")->with(compact('token'));
-        $this->layout->extend = 'layouts.front';
+        return View::make("site.password.reset")->with(compact('token'));
     }
 
     public function postPasswordReset()

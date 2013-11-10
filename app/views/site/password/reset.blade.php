@@ -1,4 +1,4 @@
-@extends($extend)
+@extends('layouts.front')
 
 @section('content')
     <div class="container">

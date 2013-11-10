@@ -155,18 +155,3 @@
         </div>
     </div>
 </aside>
-
-<script type="text/javascript">
-    $(function(){
-        var currentUrl = '{{ $currentUrl }}';
-        $('section.menu a').each(function(idx, elm){
-            var elm = $(elm);
-            if(elm.attr('href') == currentUrl){
-                elm.parents('.nav-list').addClass('in').prev().find('.accordion-toggle').addClass('opened');
-                elm.parents('.nav-list').find('[data-toggle="sub-menu-collapse"]').addClass('opened');
-
-                elm.addClass('active');
-            }
-        });
-    });
-</script>
