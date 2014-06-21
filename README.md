@@ -27,5 +27,7 @@ php artisan migrate --seed
 php artisan serve
 ```
 ### open [laravel:8000](laravel:8000) in your Browser
+
 default username : admin
+
 default password : admin
